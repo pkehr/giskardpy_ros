@@ -3,6 +3,8 @@ import rospy
 
 from giskardpy.model.collision_avoidance_config import CollisionAvoidanceConfig
 from giskardpy.model.world_config import WorldConfig
+from giskardpy.model.links import CylinderGeometry
+from giskardpy.data_types.data_types import ColorRGBA
 from giskardpy_ros.configs.robot_interface_config import StandAloneRobotInterfaceConfig, RobotInterfaceConfig
 from giskardpy.data_types.data_types import PrefixName, Derivatives
 from giskardpy.god_map import god_map
@@ -98,6 +100,36 @@ class SuturoArenaWithHSRConfig(WorldWithHSRConfig):
                              homogenous_transform=msg_converter.ros_msg_to_giskard_obj(kitchen_pose.pose, god_map.world))
 
 
+
+class SuturoArenaWithHSRWithTurtleBotConfig(WorldWithHSRConfig):
+
+    def __init__(self, map_name: str = 'map',
+                 localization_joint_name: str = 'localization',
+                 odom_link_name: str = 'odom',
+                 drive_joint_name: str = 'brumbrum',
+                 description_name: str = 'robot_description',
+                 environment_description: str = 'kitchen_description',
+                 environment_name: str = 'iai_kitchen'):
+        super().__init__(map_name, localization_joint_name, odom_link_name, drive_joint_name, description_name)
+        self.environment_name = environment_description
+        self.kitchen_name = environment_name
+
+    def setup(self):
+        super().setup()
+        urdf = rospy.get_param(self.environment_name)
+        god_map.world.add_urdf(urdf=urdf,
+                               group_name=self.kitchen_name,
+                               actuated=False)
+        root_link_name = self.get_root_link_of_group(self.kitchen_name)
+        kitchen_pose = tf.lookup_pose(self.map_name, 'iai_kitchen/urdf_main')
+        self.add_fixed_joint(parent_link=self.map_name, child_link=root_link_name,
+                             homogenous_transform=msg_converter.ros_msg_to_giskard_obj(kitchen_pose.pose, god_map.world))
+
+        link_name = PrefixName('base_footprint', 'turtle')
+        self.add_empty_link(link_name)
+        self.world.links[link_name].collisions.append(CylinderGeometry(height=0.62, radius=0.25, color=ColorRGBA(1,1,1,1)))
+        self.add_6dof_joint(parent_link=self.map_name, child_link=link_name, joint_name=PrefixName('turtle_joint', 'turtle'))
+
 class HSRCollisionAvoidanceConfig(CollisionAvoidanceConfig):
     def __init__(self, drive_joint_name: str = 'brumbrum'):
         super().__init__()
@@ -173,6 +205,7 @@ class HSRVelocityInterfaceSuturo(HSRVelocityInterface):
     def setup(self):
         super().setup()
         self.sync_joint_state_topic('/iai_kitchen/joint_states', group_name=self.environment_name)
+        self.sync_6dof_joint_with_tf_frame(joint_name=PrefixName('turtle_joint', 'turtle'), tf_parent_frame='map', tf_child_frame='turtle/base_footprint')
 
 
 class HSRJointTrajInterfaceConfig(RobotInterfaceConfig):
