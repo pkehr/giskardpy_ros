@@ -3,7 +3,9 @@ Panels:
     Help Height: 78
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz/Selection
@@ -54,7 +56,7 @@ Visualization Manager:
       Marker Topic: /giskard/visualization_marker_array
       Name: MarkerArray
       Namespaces:
-        planning_visualization: true
+        world: true
       Queue Size: 100
       Value: true
     - Class: rviz/InteractiveMarkers
@@ -65,6 +67,679 @@ Visualization Manager:
       Show Descriptions: true
       Show Visual Aids: false
       Update Topic: /eef_control/update
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        arena:arena:room_center_link:
+          Value: false
+        arena_entry:entry:link:
+          Value: false
+        arena_exit:exit:link:
+          Value: false
+        arm_flex_link:
+          Value: false
+        arm_lift_link:
+          Value: false
+        arm_roll_link:
+          Value: false
+        base_b_bumper_link:
+          Value: false
+        base_f_bumper_link:
+          Value: false
+        base_footprint:
+          Value: false
+        base_footprint_turtle:
+          Value: true
+        base_imu_frame:
+          Value: false
+        base_l_drive_wheel_link:
+          Value: false
+        base_l_passive_wheel_x_frame:
+          Value: false
+        base_l_passive_wheel_y_frame:
+          Value: false
+        base_l_passive_wheel_z_link:
+          Value: false
+        base_link:
+          Value: false
+        base_r_drive_wheel_link:
+          Value: false
+        base_r_passive_wheel_x_frame:
+          Value: false
+        base_r_passive_wheel_y_frame:
+          Value: false
+        base_r_passive_wheel_z_link:
+          Value: false
+        base_range_sensor_link:
+          Value: false
+        base_roll_link:
+          Value: false
+        couch_table:couch_table:table_center:
+          Value: false
+        couch_table:couch_table:table_front_edge_center:
+          Value: false
+        couch_table:couch_table:table_origin:
+          Value: false
+        dining_room:dining_room:room_center_link:
+          Value: false
+        dining_room_entry_exit:entry_exit:link:
+          Value: false
+        dishwasher_main:
+          Value: false
+        dishwasher_tab:
+          Value: false
+        dishwasher_table:d_table:table_center:
+          Value: false
+        dishwasher_table:d_table:table_front_edge_center:
+          Value: false
+        dishwasher_table:d_table:table_origin:
+          Value: false
+        hand_camera_frame:
+          Value: false
+        hand_camera_gazebo_frame:
+          Value: false
+        hand_gripper_tool_frame:
+          Value: false
+        hand_l_distal_link:
+          Value: false
+        hand_l_finger_tip_frame:
+          Value: false
+        hand_l_finger_vacuum_frame:
+          Value: false
+        hand_l_mimic_distal_link:
+          Value: false
+        hand_l_proximal_link:
+          Value: false
+        hand_l_spring_proximal_link:
+          Value: false
+        hand_motor_dummy_link:
+          Value: false
+        hand_palm_link:
+          Value: false
+        hand_r_distal_link:
+          Value: false
+        hand_r_finger_tip_frame:
+          Value: false
+        hand_r_mimic_distal_link:
+          Value: false
+        hand_r_proximal_link:
+          Value: false
+        hand_r_spring_proximal_link:
+          Value: false
+        head_center_camera_frame:
+          Value: false
+        head_center_camera_gazebo_frame:
+          Value: false
+        head_l_stereo_camera_gazebo_frame:
+          Value: false
+        head_l_stereo_camera_link:
+          Value: false
+        head_pan_link:
+          Value: false
+        head_r_stereo_camera_gazebo_frame:
+          Value: false
+        head_r_stereo_camera_link:
+          Value: false
+        head_rgbd_sensor_gazebo_frame:
+          Value: false
+        head_rgbd_sensor_link:
+          Value: false
+        head_tilt_link:
+          Value: false
+        iai_kitchen/arena:arena:room_center_link:
+          Value: false
+        iai_kitchen/arena_entry:entry:link:
+          Value: false
+        iai_kitchen/arena_exit:exit:link:
+          Value: false
+        iai_kitchen/couch_table:couch_table:table_center:
+          Value: false
+        iai_kitchen/couch_table:couch_table:table_front_edge_center:
+          Value: false
+        iai_kitchen/couch_table:couch_table:table_origin:
+          Value: false
+        iai_kitchen/dining_room:dining_room:room_center_link:
+          Value: false
+        iai_kitchen/dining_room_entry_exit:entry_exit:link:
+          Value: false
+        iai_kitchen/dishwasher_main:
+          Value: false
+        iai_kitchen/dishwasher_tab:
+          Value: false
+        iai_kitchen/dishwasher_table:d_table:table_center:
+          Value: false
+        iai_kitchen/dishwasher_table:d_table:table_front_edge_center:
+          Value: false
+        iai_kitchen/dishwasher_table:d_table:table_origin:
+          Value: false
+        iai_kitchen/iai_kitchen:arena:door_center:
+          Value: false
+        iai_kitchen/iai_kitchen:arena:door_handle_inside:
+          Value: false
+        iai_kitchen/iai_kitchen:arena:door_handle_link:
+          Value: false
+        iai_kitchen/iai_kitchen:arena:door_handle_outside:
+          Value: false
+        iai_kitchen/iai_kitchen:arena:door_hinge:
+          Value: false
+        iai_kitchen/iai_kitchen:kitchen:room_center_link:
+          Value: false
+        iai_kitchen/kitchen_entry_exit:entry_exit:link:
+          Value: false
+        iai_kitchen/kitchen_island:kitchen_island:table_center:
+          Value: false
+        iai_kitchen/kitchen_island:kitchen_island:table_front_edge_center:
+          Value: false
+        iai_kitchen/kitchen_island:kitchen_island:table_origin:
+          Value: false
+        iai_kitchen/living_room:arena:door_center:
+          Value: false
+        iai_kitchen/living_room:arena:door_handle_inside:
+          Value: false
+        iai_kitchen/living_room:arena:door_handle_link:
+          Value: false
+        iai_kitchen/living_room:arena:door_handle_outside:
+          Value: false
+        iai_kitchen/living_room:arena:door_hinge:
+          Value: false
+        iai_kitchen/living_room:living_room:room_center_link:
+          Value: false
+        iai_kitchen/living_room_entry_exit:entry_exit:link:
+          Value: false
+        iai_kitchen/long_table:l_table:table_center:
+          Value: false
+        iai_kitchen/long_table:l_table:table_front_edge_center:
+          Value: false
+        iai_kitchen/long_table:l_table:table_origin:
+          Value: false
+        iai_kitchen/oven_area:oven_area:table_center:
+          Value: false
+        iai_kitchen/oven_area:oven_area:table_front_edge_center:
+          Value: false
+        iai_kitchen/oven_area:oven_area:table_origin:
+          Value: false
+        iai_kitchen/popcorn_table:p_table:table_center:
+          Value: false
+        iai_kitchen/popcorn_table:p_table:table_front_edge_center:
+          Value: false
+        iai_kitchen/popcorn_table:p_table:table_origin:
+          Value: false
+        iai_kitchen/refrigerator:refrigerator:table_center:
+          Value: false
+        iai_kitchen/refrigerator:refrigerator:table_front_edge_center:
+          Value: false
+        iai_kitchen/refrigerator:refrigerator:table_origin:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_back:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_base_center:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_center:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_door_left:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_door_left:handle:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_floor_0:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_floor_1:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_floor_2:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_floor_3:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_left_side:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_origin:
+          Value: false
+        iai_kitchen/shelf_billy:shelf_billy:shelf_right_side:
+          Value: false
+        iai_kitchen/sink_area_dish_washer_door:
+          Value: false
+        iai_kitchen/sink_area_dish_washer_door_handle:
+          Value: false
+        iai_kitchen/sink_area_dish_washer_main:
+          Value: false
+        iai_kitchen/suturo_couch:couch:place_one:
+          Value: false
+        iai_kitchen/suturo_couch:couch:place_three:
+          Value: false
+        iai_kitchen/suturo_couch:couch:place_two:
+          Value: false
+        iai_kitchen/urdf_main:
+          Value: false
+        iai_kitchen/urdf_offset:
+          Value: false
+        iai_kitchen/work_surface_left:work_surface_left:table_center:
+          Value: false
+        iai_kitchen/work_surface_left:work_surface_left:table_front_edge_center:
+          Value: false
+        iai_kitchen/work_surface_left:work_surface_left:table_origin:
+          Value: false
+        iai_kitchen/work_surface_right:work_surface_right:table_center:
+          Value: false
+        iai_kitchen/work_surface_right:work_surface_right:table_front_edge_center:
+          Value: false
+        iai_kitchen/work_surface_right:work_surface_right:table_origin:
+          Value: false
+        iai_kitchen:arena:door_center:
+          Value: false
+        iai_kitchen:arena:door_handle_inside:
+          Value: false
+        iai_kitchen:arena:door_handle_link:
+          Value: false
+        iai_kitchen:arena:door_handle_outside:
+          Value: false
+        iai_kitchen:arena:door_hinge:
+          Value: false
+        iai_kitchen:kitchen:room_center_link:
+          Value: false
+        kitchen_entry_exit:entry_exit:link:
+          Value: false
+        kitchen_island:kitchen_island:table_center:
+          Value: false
+        kitchen_island:kitchen_island:table_front_edge_center:
+          Value: false
+        kitchen_island:kitchen_island:table_origin:
+          Value: false
+        living_room:arena:door_center:
+          Value: false
+        living_room:arena:door_handle_inside:
+          Value: false
+        living_room:arena:door_handle_link:
+          Value: false
+        living_room:arena:door_handle_outside:
+          Value: false
+        living_room:arena:door_hinge:
+          Value: false
+        living_room:living_room:room_center_link:
+          Value: false
+        living_room_entry_exit:entry_exit:link:
+          Value: false
+        long_table:l_table:table_center:
+          Value: false
+        long_table:l_table:table_front_edge_center:
+          Value: false
+        long_table:l_table:table_origin:
+          Value: false
+        map:
+          Value: false
+        odom:
+          Value: false
+        oven_area:oven_area:table_center:
+          Value: false
+        oven_area:oven_area:table_front_edge_center:
+          Value: false
+        oven_area:oven_area:table_origin:
+          Value: false
+        popcorn_table:p_table:table_center:
+          Value: false
+        popcorn_table:p_table:table_front_edge_center:
+          Value: false
+        popcorn_table:p_table:table_origin:
+          Value: false
+        refrigerator:refrigerator:table_center:
+          Value: false
+        refrigerator:refrigerator:table_front_edge_center:
+          Value: false
+        refrigerator:refrigerator:table_origin:
+          Value: false
+        shelf_billy:shelf_billy:shelf_back:
+          Value: false
+        shelf_billy:shelf_billy:shelf_base_center:
+          Value: false
+        shelf_billy:shelf_billy:shelf_center:
+          Value: false
+        shelf_billy:shelf_billy:shelf_door_left:
+          Value: false
+        shelf_billy:shelf_billy:shelf_door_left:handle:
+          Value: false
+        shelf_billy:shelf_billy:shelf_floor_0:
+          Value: false
+        shelf_billy:shelf_billy:shelf_floor_1:
+          Value: false
+        shelf_billy:shelf_billy:shelf_floor_2:
+          Value: false
+        shelf_billy:shelf_billy:shelf_floor_3:
+          Value: false
+        shelf_billy:shelf_billy:shelf_left_side:
+          Value: false
+        shelf_billy:shelf_billy:shelf_origin:
+          Value: false
+        shelf_billy:shelf_billy:shelf_right_side:
+          Value: false
+        sink_area_dish_washer_door:
+          Value: false
+        sink_area_dish_washer_door_handle:
+          Value: false
+        sink_area_dish_washer_main:
+          Value: false
+        suturo_couch:couch:place_one:
+          Value: false
+        suturo_couch:couch:place_three:
+          Value: false
+        suturo_couch:couch:place_two:
+          Value: false
+        torso_lift_link:
+          Value: false
+        urdf_main:
+          Value: false
+        urdf_offset:
+          Value: false
+        work_surface_left:work_surface_left:table_center:
+          Value: false
+        work_surface_left:work_surface_left:table_front_edge_center:
+          Value: false
+        work_surface_left:work_surface_left:table_origin:
+          Value: false
+        work_surface_right:work_surface_right:table_center:
+          Value: false
+        work_surface_right:work_surface_right:table_front_edge_center:
+          Value: false
+        work_surface_right:work_surface_right:table_origin:
+          Value: false
+        wrist_flex_link:
+          Value: false
+        wrist_ft_sensor_frame:
+          Value: false
+        wrist_roll_link:
+          Value: false
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        map:
+          base_footprint_turtle:
+            {}
+          iai_kitchen/urdf_main:
+            iai_kitchen/urdf_offset:
+              iai_kitchen/arena:arena:room_center_link:
+                iai_kitchen/arena_entry:entry:link:
+                  {}
+                iai_kitchen/arena_exit:exit:link:
+                  {}
+              iai_kitchen/couch_table:couch_table:table_origin:
+                iai_kitchen/couch_table:couch_table:table_center:
+                  {}
+                iai_kitchen/couch_table:couch_table:table_front_edge_center:
+                  {}
+              iai_kitchen/dining_room:dining_room:room_center_link:
+                iai_kitchen/dining_room_entry_exit:entry_exit:link:
+                  {}
+              iai_kitchen/dishwasher_main:
+                iai_kitchen/sink_area_dish_washer_main:
+                  iai_kitchen/dishwasher_table:d_table:table_origin:
+                    iai_kitchen/dishwasher_table:d_table:table_center:
+                      {}
+                    iai_kitchen/dishwasher_table:d_table:table_front_edge_center:
+                      {}
+                  iai_kitchen/sink_area_dish_washer_door:
+                    iai_kitchen/sink_area_dish_washer_door_handle:
+                      iai_kitchen/dishwasher_tab:
+                        {}
+              iai_kitchen/iai_kitchen:arena:door_hinge:
+                iai_kitchen/iai_kitchen:arena:door_center:
+                  iai_kitchen/iai_kitchen:arena:door_handle_link:
+                    iai_kitchen/iai_kitchen:arena:door_handle_inside:
+                      {}
+                    iai_kitchen/iai_kitchen:arena:door_handle_outside:
+                      {}
+              iai_kitchen/iai_kitchen:kitchen:room_center_link:
+                iai_kitchen/kitchen_entry_exit:entry_exit:link:
+                  {}
+              iai_kitchen/kitchen_island:kitchen_island:table_origin:
+                iai_kitchen/kitchen_island:kitchen_island:table_center:
+                  {}
+                iai_kitchen/kitchen_island:kitchen_island:table_front_edge_center:
+                  {}
+              iai_kitchen/living_room:arena:door_hinge:
+                iai_kitchen/living_room:arena:door_center:
+                  iai_kitchen/living_room:arena:door_handle_link:
+                    iai_kitchen/living_room:arena:door_handle_inside:
+                      {}
+                    iai_kitchen/living_room:arena:door_handle_outside:
+                      {}
+              iai_kitchen/living_room:living_room:room_center_link:
+                iai_kitchen/living_room_entry_exit:entry_exit:link:
+                  {}
+              iai_kitchen/long_table:l_table:table_origin:
+                iai_kitchen/long_table:l_table:table_center:
+                  {}
+                iai_kitchen/long_table:l_table:table_front_edge_center:
+                  {}
+              iai_kitchen/oven_area:oven_area:table_origin:
+                iai_kitchen/oven_area:oven_area:table_center:
+                  {}
+                iai_kitchen/oven_area:oven_area:table_front_edge_center:
+                  {}
+              iai_kitchen/popcorn_table:p_table:table_origin:
+                iai_kitchen/popcorn_table:p_table:table_center:
+                  {}
+                iai_kitchen/popcorn_table:p_table:table_front_edge_center:
+                  {}
+              iai_kitchen/refrigerator:refrigerator:table_origin:
+                iai_kitchen/refrigerator:refrigerator:table_center:
+                  {}
+                iai_kitchen/refrigerator:refrigerator:table_front_edge_center:
+                  {}
+              iai_kitchen/shelf_billy:shelf_billy:shelf_origin:
+                iai_kitchen/shelf_billy:shelf_billy:shelf_back:
+                  {}
+                iai_kitchen/shelf_billy:shelf_billy:shelf_base_center:
+                  iai_kitchen/shelf_billy:shelf_billy:shelf_floor_0:
+                    {}
+                  iai_kitchen/shelf_billy:shelf_billy:shelf_floor_1:
+                    {}
+                  iai_kitchen/shelf_billy:shelf_billy:shelf_floor_2:
+                    {}
+                  iai_kitchen/shelf_billy:shelf_billy:shelf_floor_3:
+                    {}
+                iai_kitchen/shelf_billy:shelf_billy:shelf_center:
+                  {}
+                iai_kitchen/shelf_billy:shelf_billy:shelf_left_side:
+                  iai_kitchen/shelf_billy:shelf_billy:shelf_door_left:
+                    iai_kitchen/shelf_billy:shelf_billy:shelf_door_left:handle:
+                      {}
+                iai_kitchen/shelf_billy:shelf_billy:shelf_right_side:
+                  {}
+              iai_kitchen/suturo_couch:couch:place_one:
+                iai_kitchen/suturo_couch:couch:place_three:
+                  {}
+                iai_kitchen/suturo_couch:couch:place_two:
+                  {}
+              iai_kitchen/work_surface_left:work_surface_left:table_origin:
+                iai_kitchen/work_surface_left:work_surface_left:table_center:
+                  {}
+                iai_kitchen/work_surface_left:work_surface_left:table_front_edge_center:
+                  {}
+              iai_kitchen/work_surface_right:work_surface_right:table_origin:
+                iai_kitchen/work_surface_right:work_surface_right:table_center:
+                  {}
+                iai_kitchen/work_surface_right:work_surface_right:table_front_edge_center:
+                  {}
+          odom:
+            base_footprint:
+              base_link:
+                arm_lift_link:
+                  arm_flex_link:
+                    arm_roll_link:
+                      wrist_flex_link:
+                        wrist_roll_link:
+                          hand_palm_link:
+                            hand_camera_frame:
+                              hand_camera_gazebo_frame:
+                                {}
+                            hand_gripper_tool_frame:
+                              {}
+                            hand_l_proximal_link:
+                              hand_l_spring_proximal_link:
+                                hand_l_mimic_distal_link:
+                                  hand_l_distal_link:
+                                    hand_l_finger_tip_frame:
+                                      {}
+                                    hand_l_finger_vacuum_frame:
+                                      {}
+                            hand_motor_dummy_link:
+                              {}
+                            hand_r_proximal_link:
+                              hand_r_spring_proximal_link:
+                                hand_r_mimic_distal_link:
+                                  hand_r_distal_link:
+                                    hand_r_finger_tip_frame:
+                                      {}
+                          wrist_ft_sensor_frame:
+                            {}
+                base_b_bumper_link:
+                  {}
+                base_f_bumper_link:
+                  {}
+                base_imu_frame:
+                  {}
+                base_range_sensor_link:
+                  {}
+                base_roll_link:
+                  base_l_drive_wheel_link:
+                    {}
+                  base_l_passive_wheel_x_frame:
+                    base_l_passive_wheel_y_frame:
+                      base_l_passive_wheel_z_link:
+                        {}
+                  base_r_drive_wheel_link:
+                    {}
+                  base_r_passive_wheel_x_frame:
+                    base_r_passive_wheel_y_frame:
+                      base_r_passive_wheel_z_link:
+                        {}
+                torso_lift_link:
+                  head_pan_link:
+                    head_tilt_link:
+                      head_center_camera_frame:
+                        head_center_camera_gazebo_frame:
+                          {}
+                      head_l_stereo_camera_link:
+                        head_l_stereo_camera_gazebo_frame:
+                          {}
+                      head_r_stereo_camera_link:
+                        head_r_stereo_camera_gazebo_frame:
+                          {}
+                      head_rgbd_sensor_link:
+                        head_rgbd_sensor_gazebo_frame:
+                          {}
+          urdf_main:
+            urdf_offset:
+              arena:arena:room_center_link:
+                arena_entry:entry:link:
+                  {}
+                arena_exit:exit:link:
+                  {}
+              couch_table:couch_table:table_origin:
+                couch_table:couch_table:table_center:
+                  {}
+                couch_table:couch_table:table_front_edge_center:
+                  {}
+              dining_room:dining_room:room_center_link:
+                dining_room_entry_exit:entry_exit:link:
+                  {}
+              dishwasher_main:
+                sink_area_dish_washer_main:
+                  dishwasher_table:d_table:table_origin:
+                    dishwasher_table:d_table:table_center:
+                      {}
+                    dishwasher_table:d_table:table_front_edge_center:
+                      {}
+                  sink_area_dish_washer_door:
+                    sink_area_dish_washer_door_handle:
+                      dishwasher_tab:
+                        {}
+              iai_kitchen:arena:door_hinge:
+                iai_kitchen:arena:door_center:
+                  iai_kitchen:arena:door_handle_link:
+                    iai_kitchen:arena:door_handle_inside:
+                      {}
+                    iai_kitchen:arena:door_handle_outside:
+                      {}
+              iai_kitchen:kitchen:room_center_link:
+                kitchen_entry_exit:entry_exit:link:
+                  {}
+              kitchen_island:kitchen_island:table_origin:
+                kitchen_island:kitchen_island:table_center:
+                  {}
+                kitchen_island:kitchen_island:table_front_edge_center:
+                  {}
+              living_room:arena:door_hinge:
+                living_room:arena:door_center:
+                  living_room:arena:door_handle_link:
+                    living_room:arena:door_handle_inside:
+                      {}
+                    living_room:arena:door_handle_outside:
+                      {}
+              living_room:living_room:room_center_link:
+                living_room_entry_exit:entry_exit:link:
+                  {}
+              long_table:l_table:table_origin:
+                long_table:l_table:table_center:
+                  {}
+                long_table:l_table:table_front_edge_center:
+                  {}
+              oven_area:oven_area:table_origin:
+                oven_area:oven_area:table_center:
+                  {}
+                oven_area:oven_area:table_front_edge_center:
+                  {}
+              popcorn_table:p_table:table_origin:
+                popcorn_table:p_table:table_center:
+                  {}
+                popcorn_table:p_table:table_front_edge_center:
+                  {}
+              refrigerator:refrigerator:table_origin:
+                refrigerator:refrigerator:table_center:
+                  {}
+                refrigerator:refrigerator:table_front_edge_center:
+                  {}
+              shelf_billy:shelf_billy:shelf_origin:
+                shelf_billy:shelf_billy:shelf_back:
+                  {}
+                shelf_billy:shelf_billy:shelf_base_center:
+                  shelf_billy:shelf_billy:shelf_floor_0:
+                    {}
+                  shelf_billy:shelf_billy:shelf_floor_1:
+                    {}
+                  shelf_billy:shelf_billy:shelf_floor_2:
+                    {}
+                  shelf_billy:shelf_billy:shelf_floor_3:
+                    {}
+                shelf_billy:shelf_billy:shelf_center:
+                  {}
+                shelf_billy:shelf_billy:shelf_left_side:
+                  shelf_billy:shelf_billy:shelf_door_left:
+                    shelf_billy:shelf_billy:shelf_door_left:handle:
+                      {}
+                shelf_billy:shelf_billy:shelf_right_side:
+                  {}
+              suturo_couch:couch:place_one:
+                suturo_couch:couch:place_three:
+                  {}
+                suturo_couch:couch:place_two:
+                  {}
+              work_surface_left:work_surface_left:table_origin:
+                work_surface_left:work_surface_left:table_center:
+                  {}
+                work_surface_left:work_surface_left:table_front_edge_center:
+                  {}
+              work_surface_right:work_surface_right:table_origin:
+                work_surface_right:work_surface_right:table_center:
+                  {}
+                work_surface_right:work_surface_right:table_front_edge_center:
+                  {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
@@ -94,7 +769,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.698418617248535
+      Distance: 4.499052047729492
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -102,17 +777,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.2086089849472046
-        Y: -0.284213125705719
-        Z: 0.3925349712371826
+        X: 0.817560613155365
+        Y: -0.3092249035835266
+        Z: 0.33517590165138245
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3703979253768921
+      Pitch: 0.530397355556488
       Target Frame: <Fixed Frame>
-      Yaw: 0.4503987431526184
+      Yaw: 4.6154255867004395
     Saved: ~
 Window Geometry:
   Displays:
@@ -120,7 +795,7 @@ Window Geometry:
   Height: 846
   Hide Left Dock: false
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd000000040000000000000156000002b0fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002b0000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002b0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000002b0000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004b00000003efc0100000002fb0000000800540069006d00650100000000000004b00000033700fffffffb0000000800540069006d0065010000000000000450000000000000000000000354000002b000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000247000002b0fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002b0000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002b0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000002b0000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004b00000003efc0100000002fb0000000800540069006d00650100000000000004b0000003bc00fffffffb0000000800540069006d0065010000000000000450000000000000000000000263000002b000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -130,5 +805,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1200
-  X: 57
-  Y: 0
+  X: 2483
+  Y: 360

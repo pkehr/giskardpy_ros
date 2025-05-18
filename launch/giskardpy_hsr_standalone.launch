@@ -13,6 +13,7 @@
       - [odom, base_footprint]
       - [odom, head_rgbd_sensor_link]
       - [odom, hand_palm_link]
+      - [odom_turtle, base_footprint_turtle]
     </rosparam>
   </node>
 

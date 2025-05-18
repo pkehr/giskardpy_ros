@@ -99,6 +99,37 @@ class SuturoArenaWithHSRConfig(WorldWithHSRConfig):
         self.add_fixed_joint(parent_link=self.map_name, child_link=root_link_name,
                              homogenous_transform=msg_converter.ros_msg_to_giskard_obj(kitchen_pose.pose, god_map.world))
 
+        turtle_prefix = 'turtle'
+        turtle_odom_link_name = PrefixName('odom_turtle', turtle_prefix)
+        self.add_empty_link(turtle_odom_link_name)
+        self.world.links[turtle_odom_link_name].collisions.append(CylinderGeometry(height=0.62, radius=0.25, color=ColorRGBA(1,1,1,1)))
+        self.add_6dof_joint(parent_link=self.map_name, child_link=turtle_odom_link_name, joint_name=PrefixName('turtle_odom_joint', 'turtle'))
+
+        self.world.register_group(turtle_prefix, root_link_name=turtle_odom_link_name)
+
+
+        turtle_base_link_name = PrefixName('base_footprint_turtle', turtle_prefix)
+        self.add_empty_link(turtle_base_link_name)
+
+        self.add_omni_drive_joint(parent_link_name=turtle_odom_link_name,
+                                  child_link_name=turtle_base_link_name,
+                                  name='brumbrum_turtle',
+                                  x_name=PrefixName('odom_x', turtle_prefix),
+                                  y_name=PrefixName('odom_y', turtle_prefix),
+                                  yaw_vel_name=PrefixName('odom_t', turtle_prefix),
+                                  translation_limits={
+                                      Derivatives.velocity: 0.2,
+                                      Derivatives.acceleration: np.inf,
+                                      Derivatives.jerk: None,
+                                  },
+                                  rotation_limits={
+                                      Derivatives.velocity: 0.2,
+                                      Derivatives.acceleration: np.inf,
+                                      Derivatives.jerk: None
+                                  },
+                                  robot_group_name=turtle_prefix)
+
+
 
 
 class SuturoArenaWithHSRWithTurtleBotConfig(WorldWithHSRConfig):
@@ -125,7 +156,7 @@ class SuturoArenaWithHSRWithTurtleBotConfig(WorldWithHSRConfig):
         self.add_fixed_joint(parent_link=self.map_name, child_link=root_link_name,
                              homogenous_transform=msg_converter.ros_msg_to_giskard_obj(kitchen_pose.pose, god_map.world))
 
-        link_name = PrefixName('base_footprint', 'turtle')
+        link_name = PrefixName('base_footprint_turtle', 'turtle')
         self.add_empty_link(link_name)
         self.world.links[link_name].collisions.append(CylinderGeometry(height=0.62, radius=0.25, color=ColorRGBA(1,1,1,1)))
         self.add_6dof_joint(parent_link=self.map_name, child_link=link_name, joint_name=PrefixName('turtle_joint', 'turtle'))
@@ -162,7 +193,8 @@ class HSRStandaloneInterface(StandAloneRobotInterfaceConfig):
             'head_tilt_joint',
             'wrist_flex_joint',
             'wrist_roll_joint',
-            drive_joint_name])
+            drive_joint_name,
+            'brumbrum_turtle'])
 
 
 class HSRVelocityInterface(RobotInterfaceConfig):
