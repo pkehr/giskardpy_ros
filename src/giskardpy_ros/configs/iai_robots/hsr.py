@@ -158,7 +158,7 @@ class SuturoArenaWithHSRWithTurtleBotConfig(WorldWithHSRConfig):
 
         link_name = PrefixName('base_footprint_turtle', 'turtle')
         self.add_empty_link(link_name)
-        self.world.links[link_name].collisions.append(CylinderGeometry(height=0.62, radius=0.25, color=ColorRGBA(1,1,1,1)))
+        #self.world.links[link_name].collisions.append(CylinderGeometry(height=0.62, radius=0.25, color=ColorRGBA(1,1,1,1)))
         self.add_6dof_joint(parent_link=self.map_name, child_link=link_name, joint_name=PrefixName('turtle_joint', 'turtle'))
 
 class HSRCollisionAvoidanceConfig(CollisionAvoidanceConfig):
