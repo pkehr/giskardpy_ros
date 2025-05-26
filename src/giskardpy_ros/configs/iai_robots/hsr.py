@@ -99,38 +99,6 @@ class SuturoArenaWithHSRConfig(WorldWithHSRConfig):
         self.add_fixed_joint(parent_link=self.map_name, child_link=root_link_name,
                              homogenous_transform=msg_converter.ros_msg_to_giskard_obj(kitchen_pose.pose, god_map.world))
 
-        turtle_prefix = 'turtle'
-        turtle_odom_link_name = PrefixName('odom_turtle', turtle_prefix)
-        self.add_empty_link(turtle_odom_link_name)
-        self.world.links[turtle_odom_link_name].collisions.append(CylinderGeometry(height=0.62, radius=0.25, color=ColorRGBA(1,1,1,1)))
-        self.add_6dof_joint(parent_link=self.map_name, child_link=turtle_odom_link_name, joint_name=PrefixName('turtle_odom_joint', 'turtle'))
-
-        self.world.register_group(turtle_prefix, root_link_name=turtle_odom_link_name)
-
-
-        turtle_base_link_name = PrefixName('base_footprint_turtle', turtle_prefix)
-        self.add_empty_link(turtle_base_link_name)
-
-        self.add_omni_drive_joint(parent_link_name=turtle_odom_link_name,
-                                  child_link_name=turtle_base_link_name,
-                                  name='brumbrum_turtle',
-                                  x_name=PrefixName('odom_x', turtle_prefix),
-                                  y_name=PrefixName('odom_y', turtle_prefix),
-                                  yaw_vel_name=PrefixName('odom_t', turtle_prefix),
-                                  translation_limits={
-                                      Derivatives.velocity: 0.2,
-                                      Derivatives.acceleration: np.inf,
-                                      Derivatives.jerk: None,
-                                  },
-                                  rotation_limits={
-                                      Derivatives.velocity: 0.2,
-                                      Derivatives.acceleration: np.inf,
-                                      Derivatives.jerk: None
-                                  },
-                                  robot_group_name=turtle_prefix)
-
-
-
 
 class SuturoArenaWithHSRWithTurtleBotConfig(WorldWithHSRConfig):
 
@@ -232,14 +200,16 @@ class HSRVelocityInterface(RobotInterfaceConfig):
 class HSRVelocityInterfaceSuturo(HSRVelocityInterface):
 
     def __init__(self, map_name: str = 'map', localization_joint_name: str = 'localization',
-                 odom_link_name: str = 'odom', drive_joint_name: str = 'brumbrum', environment_name: str = 'iai_kitchen'):
+                 odom_link_name: str = 'odom', drive_joint_name: str = 'brumbrum', environment_name: str = 'iai_kitchen', sync_turtle=False):
         super().__init__(map_name, localization_joint_name, odom_link_name, drive_joint_name)
         self.environment_name = environment_name
+        self.sync_turtle = sync_turtle
 
     def setup(self):
         super().setup()
         self.sync_joint_state_topic('/iai_kitchen/joint_states', group_name=self.environment_name)
-        self.sync_6dof_joint_with_tf_frame(joint_name=PrefixName('turtle_joint', 'turtle'), tf_parent_frame='map', tf_child_frame='turtle/base_footprint')
+        if self.sync_turtle:
+            self.sync_6dof_joint_with_tf_frame(joint_name=PrefixName('turtle_joint', 'turtle'), tf_parent_frame='map', tf_child_frame='turtle/base_footprint')
 
 
 class HSRJointTrajInterfaceConfig(RobotInterfaceConfig):
